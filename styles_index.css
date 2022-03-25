@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap'); /*importamos la fuente que vamos a utiliza de GoogleFonts*/
+
+body {
+    margin: 0px; /*quitamos todo el margen de nuestro cuerpo del documento*/
+    background-color: #8F57FD; /*Cuando aplicamos un fonfo al body, por default se nos aplica al header ya que este es trasnparente*/
+    font-family: 'Mulish', sans-serif; /*aplicamos la fuente a todo el texto de nuestro "body" */
+}
+.header {
+    width: 100%; /*Medida relativa para ajustar el ancho al 100% de las diferentes pantallas*/
+    height: 80px; /*medida absoluta ajusta la altura del header a 80px*/
+    display: flex; /*propiedad Flexbox para alinear el logo y el componente menú*/
+    justify-content: space-between; /*generamos un espacio entre nuestro logo y nuestro menú*/
+    align-items: center;
+}
+.header__img {
+    width: 200px; /*disminuimos el tamaño de la imagen ajustando el ancho de la misma*/
+    margin-top: 10px;  /*aplicamos margen de de 10px al elemento imagen del header*/
+    margin-left: 10px;
+}
+.header__menu {
+    margin-right: 30px;
+}
+.header__menu ul { /* estilos para la lista desplegable del menú*/
+    display: none; /*Oculta la lista desplegable del menú*/
+    list-style: none; /*quitamos los puntos que vienen por default en el elemento "lista"*/
+    padding: 0px; /* quitamos el padding que viene por defecto en el elemento "lista" */
+    position: absolute; /*asignamos posición absoluta para posicionarlo en realación al padre*/
+    width: 100px;
+    text-align: right; /*alineamos el texto para que se muestre de izquiera a derecha*/
+    margin: 0px 0px 0px -14px; /*ponemos margen negativo del lado izquierdo para que el texto se muestre fuera del icono de usuario*/
+}
+.header__menu:hover ul, ul:hover { /*usamos la pseudoclase "hover" y afectamos los <ul> de la clase y cada unos de los elementos <ul> */
+    display: block; /*al aplicar esta propiedad permitimos que se muestre la lista al hacer "hover" sobre el elemento <ul> */
+}
+.header__menu li {
+    margin: 10px 0px; /*cuando colocamos solo 2 valores de margin 10px afecta (top-bottom) y 0px afecta (left-right) */
+}
+.header__menu li a {
+    color: white;
+    text-decoration: none;
+}
+.header__menu li a:hover { /*aplicamos la pripiedad de subrayado cuando hacemos "hover" sobre los elementos <a> de la lista*/
+    text-decoration: underline;
+}
+.header__menu--profile {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* con esta propiedad al hacer hover sobre el ítem el cursor se pone en forma de "maninta"*/
+}
+.header__menu--profile img {
+    margin-right: 8px;
+    width: 40px;
+}
+.header__menu--profile p {
+    margin: 0px;
+    color: white;
+}
+.main {
+    height: 300px;
+}
+.main__title {
+    color: white;
+    font-size: 25px;
+}
+.input {
+    background-color: rgba(255, 255, 255, 0.1); /* valores RGBA; la a es de opacidad y se define del 0 al 1 su valor */
+    border: 2px solid white;
+    border-radius: 50px; /* hacemos ovalado el "input" por default es un cuadro */
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    padding: 0px 20px; /* quitamos paddign a <input> para que no se haga más grande el interior del input y separamos un poco el texto del borde */
+    width: 70%;
+    outline: none; /* quitamos el outline que aparece por defecto al hacer clic en nuestro input */
+}
+::placeholder { /* Pseudo-elemento para afectar la propiedad "placeholder " */
+    color: white;
+}
+.carousel {
+    width: 100%;
+    overflow: scroll; /* propiedad para hacer el efecto de scroll sobre carousel de imágenes*/
+    padding: 30px; /*asginamos el mismo paddign que el header*/
+    position: relative; /*los elementos que estén dentro de esta clase se van a posicionar en relación al elemento padre*/
+}
+.carousel__container {
+    white-space: nowrap; /*esta propiedad hace que lo ítems se vean desbordados hacía la izquierda y derecha de nuestra página*/
+    margin: 70px 0px; /*aplicamos margen de 70px arriba y abajo y 0px izquierda y derecha*/
+    padding-bottom: 10px; /*aplicamos este padding para que la imagen no se corte al hacer "hover"*/
+}
+.carousel-item { /* estilos de cada ítem*/
+    background-color: pink;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; /*redondeamos el borde del ítem*/
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block; /* con este display colocamos los elementos uno a la lado del otro y  no debajo de cada uno como se generan por "default"*/
+    cursor: pointer; /* con esta propiedad al hacer hover sobre el ítem el cursor se pone en forma de "maninta"*/
+    transition: 450ms all; /*aumentamos la fluidez de la transición disminuyendo la velocidad del efecto (más suave)*/
+    transform-origin:  center left; /*para que no se salgan los ítems y que se haga el efecto de izq a derecha*/
+    position: relative;  /*para que pueda tomar los estilos y sea realativo al elemento padre*/
+}
+.carousel-item:hover ~ .carousel-item { /*Pseudo-clase "hover" con (~ .carousel-item) le indicamos que aplique el efecto aunque no hagamos "hover" */
+    transform: translate3d(100px, 0, 0); /*aplicamos una transformación: cuando hagamos "hover" todos nuestro elementos se van a desplazar hacia la derecha*/
+}
+.carousel__container:hover .carousel-item { /*declaración para bajar la opacidad al hacer "hover" sobre los elementos*/
+    opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover { /*declaración para hacer el ítem más grander al hacer "hover" sobre la imagen*/
+    transform: scale(1.5); /*normalmente la escala del elemento está en 1 con el valor 1.5 se hace más grande*/
+    opacity: 1; /*dejamos la luminosidad original al elemento seleccionado*/
+}
+.carousel-item__img { /* estilos para cada item*/
+    width: 200px;
+    height: 250px;
+    object-fit: cover; /*propiedad para ajustar imagen al contenedor*/
+}
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%); /*generamos gradiente desde color transparente hasta el color obscuro*/
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms opacity; /*agregamos el gradiente paulativamente igual a la velocidad de la transición anterior*/
+    padding: 10px 10px; /*para que los textos no queden pegados*/
+    position: absolute; /*para poder mover nuestros elementos*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex; /*aplicar flexbox al contenedor*/
+    justify-content: flex-end; /*mandamos las imágenes y títulos a la parte inferior del contenedor*/
+    flex-direction: column;
+}
+.carousel-item__details img {
+    height: 15px;
+}
+.carousel-item__details p {
+    margin: 0px;
+}
+.carousel-item__details:hover {
+    opacity: 1;
+    color: white;
+}

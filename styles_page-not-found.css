@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap'); /*importamos la fuente que vamos a utiliza de GoogleFonts*/
+
+body {
+    background-color: #6e4eb8;
+    height: 100%;
+    margin: 0px; /*quitamos todo el margen de nuestro cuerpo del documento*/
+    font-family: 'Mulish', sans-serif; /*aplicamos la fuente a todo el texto de nuestro "body" */
+    width: 100%;
+}
+.header {
+    color: white;
+    align-items: center;
+    background-color: #6e4eb8;
+    color: white;
+    display: flex; /*propiedad Flexbox para alinear el logo y el componente menú*/
+    height: 100px; /*medida absoluta ajusta la altura del header a 80px*/
+    justify-content: space-between; /*dejar un espacio entre los elementos*/
+    top: 0px;
+    width: 100%; /*Medida relativa para ajustar el ancho al 100% de las diferentes pantallas*/
+}
+.header__img {
+    margin-left: 30px;
+    width: 200px;
+}
+.pagenotfound {
+    display: flex;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 200px);
+    
+}
+.text {
+    text-align: center;
+    font-size: 10em;
+    text-transform: uppercase;
+}
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+.pulse {
+    animation-name: pulse;
+    animation-duration: 1s;
+}
+h2 {
+    margin: 0px;
+}
+h3 {
+    font-size: 2.0em; 
+}
+.footer {
+    background-color: #6e4eb8;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+.footer a {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Video</title> <!-- nombre de la página -->
+    <link rel="stylesheet" href="styles_index.css"> <!-- Enlace a hoja de estilos CSS -->
+</head>
+<body>
+    <header class="header"> <!-- clase padre: "header" -->
+        <img class="header__img" src="./IMG/logo-platzi-video.png" alt="Logo de Platzi"> <!-- logo de la página -->
+        <div class="header__menu"> <!-- menú desplegable-->
+            <div class="header__menu--profile"> <!-- BEM (BLOQUE__ELEMENTO--MODIFICADOR = header__menu--profile)-->
+                <img src="./IMG/user-icon.png" alt="User"> <!-- icono del perfil -->
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="/">Usuario</a></li>
+                <li><a href="/">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="main">
+        <h2 class="main__title">¿Qué quieres ver hoy?</h2>
+        <input class="input" type="text" placeholder="Buscar..."> <!-- el atributo "placeholder" agrega el texto dentro del input -->
+    </section>
+    <section class="carousel"> <!-- componente de carousel de imágenes -->
+        <div class="carousel__container"> <!-- clase contendedora-->
+            <div class="carousel-item"> <!-- ítem n° 1-->
+                <img class="carousel-item__img" src="./IMG/item_soporte1.jpg" alt="agentes de soporte"><!-- imágen del ítem-->
+                <div class="carousel-item__details"> <!-- contenedor para los íconos y detalles de cada ítem-->
+                    <div> <!-- "wrap" para colocar las ímagenes de los íconos: "play" y "más" una al lado de la otra-->
+                        <img src="./IMG/play-icon.png" alt="play icon">
+                        <img src="./IMG/plus-icon.png" alt="plus icon">
+                    </div>
+                    <p class="carousel-item__details--title">Título descriptivo</p>  
+                    <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>  
+                </div>
+            </div>
+            <div class="carousel-item">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
